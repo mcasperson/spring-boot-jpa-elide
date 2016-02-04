@@ -39,7 +39,7 @@ public class Parent implements Serializable {
 		this.id = id;
 	}
 
-	Column(length=45)
+	@Column(length=45)
 	public String getDescription() {
 		return this.description;
 	}
