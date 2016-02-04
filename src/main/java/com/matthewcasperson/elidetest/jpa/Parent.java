@@ -19,6 +19,7 @@ public class Parent implements Serializable {
 
 	@Id
 	@Column(unique=true, nullable=false)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
 	@Column(length=45)
