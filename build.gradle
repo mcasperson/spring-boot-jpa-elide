@@ -41,11 +41,11 @@ dependencies {
     /*
         These are the Elide dependencies
      */
-    compile 'com.yahoo.elide:elide-core:1.0.0.16'
+    compile 'com.yahoo.elide:elide-core:1.0.0.19'
     /*
         We'll be using Hibernate 5, so we need the Elide Hibernate 5 datastore
      */
-    compile 'com.yahoo.elide:elide-datastore-hibernate5:1.0.0.16'
+    compile 'com.yahoo.elide:elide-datastore-hibernate5:1.0.0.19'
     /*
         We then need to include Hibernate 5
      */
