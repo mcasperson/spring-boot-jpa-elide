@@ -44,7 +44,7 @@ public class ElideTest {
     @RequestMapping(
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE,
-            value={"/{entity}", "/{entity}/{id}/relationship/{entity2}", "/{entity}/{id}/{child}", "/{entity}/{id}"})
+            value={"/{entity}", "/{entity}/{id}/relationships/{entity2}", "/{entity}/{id}/{child}", "/{entity}/{id}"})
     @Transactional
     public String jsonApiGet(@RequestParam final Map<String, String> allRequestParams, final HttpServletRequest request) {
         /*
