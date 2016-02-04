@@ -36,7 +36,7 @@ repositories {
 
 dependencies {
     compile 'org.springframework.boot:spring-boot-starter-web'
-    compile 'org.springframework.boot:spring-boot-starter-data-com.matthewcasperson.elidetest.jpa'
+    compile 'org.springframework.boot:spring-boot-starter-data-jpa'
 
     /*
         These are the Elide dependencies
