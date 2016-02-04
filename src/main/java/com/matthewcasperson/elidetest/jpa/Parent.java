@@ -17,26 +17,21 @@ import java.util.List;
 public class Parent implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Id
-	@Column(unique=true, nullable=false)
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 
-	@Column(length=45)
 	private String description;
 
-	@Column(length=45)
 	private String name;
 
-	//bi-directional many-to-one association to Child
-	@OneToMany(mappedBy="parent")
-	@JsonManagedReference
-	private List<Child> childs;
+	private List<Child> children;
 
 	public Parent() {
 	}
 
-	public int getId() {
+	@Id
+	@Column(unique=true, nullable=false)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	public Integer getId() {
 		return this.id;
 	}
 
@@ -44,6 +39,7 @@ public class Parent implements Serializable {
 		this.id = id;
 	}
 
+	Column(length=45)
 	public String getDescription() {
 		return this.description;
 	}
@@ -52,6 +48,7 @@ public class Parent implements Serializable {
 		this.description = description;
 	}
 
+	@Column(length=45)
 	public String getName() {
 		return this.name;
 	}
@@ -60,23 +57,26 @@ public class Parent implements Serializable {
 		this.name = name;
 	}
 
-	public List<Child> getChilds() {
-		return this.childs;
+	//bi-directional many-to-one association to Child
+	@OneToMany(mappedBy="parent")
+	@JsonManagedReference
+	public List<Child> getChildren() {
+		return this.children;
 	}
 
-	public void setChilds(List<Child> childs) {
-		this.childs = childs;
+	public void setChildren(List<Child> childs) {
+		this.children = childs;
 	}
 
 	public Child addChild(Child child) {
-		getChilds().add(child);
+		getChildren().add(child);
 		child.setParent(this);
 
 		return child;
 	}
 
 	public Child removeChild(Child child) {
-		getChilds().remove(child);
+		getChildren().remove(child);
 		child.setParent(null);
 
 		return child;
