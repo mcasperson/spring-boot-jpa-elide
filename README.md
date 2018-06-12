@@ -8,3 +8,9 @@ This code is part of a tutorial that can be read at https://dzone.com/articles/c
 * https://elide-test.herokuapp.com/parent?filter[parent.id]=2 will return the parent entity with the id of 2
 * https://elide-test.herokuapp.com/parent?filter[parent.name][prefix]=Jane will return the parent entities with the name attribute starting with “Jane”
 * https://elide-test.herokuapp.com/parent?sort=-name will return the parent entities sorted by the name attribute in descending order
+
+To run locally:
+
+    install java
+    $ ./gradlew build
+    $ ./gradlew bootRun
